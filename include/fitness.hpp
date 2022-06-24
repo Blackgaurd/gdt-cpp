@@ -1,8 +1,7 @@
 #include <math.h>
 
 //. TEMPORARY I NEED ASSSITANCE
-struct DecisionTree
-{
+struct DecisionTree {
 };
 
 // math funcs
@@ -11,14 +10,12 @@ float tanh(int depth, int optimal_depth);
 float sigmoid(int depth, int optimal_depth);
 float negative_quadratic(int depth, int optimal_depth);
 
-struct _2D_Array_i
-{
+struct _2D_Array_i {
     int first, second;
 };
 
-class FitnessEvaluator
-{
-private:
+class FitnessEvaluator {
+   private:
     // no idea what a1 and a2 are :)
     float a1, a2;
     // float arrays
@@ -28,7 +25,7 @@ private:
     // idk how to add funcs
     void (*func)(_2D_Array_i, float);
 
-public:
+   public:
     FitnessEvaluator();
     ~FitnessEvaluator();
 
