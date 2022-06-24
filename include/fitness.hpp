@@ -24,6 +24,8 @@ class FitnessEvaluator {
     float *x, *y;
     // float array size value
     int x_size, y_size;
+    // funciton
+    std::function<float(int, int)> f2_func;
 
    public:
     FitnessEvaluator(float a1, float a2, std::function<float(int, int)> f2_func);
