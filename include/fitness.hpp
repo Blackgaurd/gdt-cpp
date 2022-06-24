@@ -1,5 +1,7 @@
 #include <math.h>
 
+#include <functional>
+
 //. TEMPORARY I NEED ASSSITANCE
 struct DecisionTree {
 };
@@ -22,14 +24,12 @@ class FitnessEvaluator {
     float *x, *y;
     // float array size value
     int x_size, y_size;
-    // idk how to add funcs
-    void (*func)(_2D_Array_i, float);
 
    public:
-    FitnessEvaluator();
+    FitnessEvaluator(float a1, float a2, std::function<float(int, int)> f2_func);
     ~FitnessEvaluator();
 
-    void init();
+    void _init();
     float accuracy(DecisionTree);
     float call(DecisionTree);
 };
