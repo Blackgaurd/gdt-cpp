@@ -17,6 +17,7 @@ FitnessEvaluator::FitnessEvaluator(float a1, float a2, std::function<float(int, 
 }
 
 FitnessEvaluator::~FitnessEvaluator() {
+    // clean all variables?
 }
 
 void FitnessEvaluator::_init() {

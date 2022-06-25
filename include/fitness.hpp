@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cmath>
 #include <functional>
 
@@ -22,5 +24,5 @@ class FitnessEvaluator {
 
     void _init();
     float accuracy(const DecisionTree &individual);
-    float operator() (const DecisionTree &individual);
+    float operator()(const DecisionTree &individual);
 };
