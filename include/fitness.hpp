@@ -1,5 +1,4 @@
-#include <math.h>
-
+#include <cmath>
 #include <functional>
 
 //. TEMPORARY I NEED ASSSITANCE
