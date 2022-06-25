@@ -1,5 +1,11 @@
-#include <math.h>
+#include <utility>
+#include <vector>
 
-template <typename T>
-struct Matrix2 : std::vector<T> {
+struct Matrix2D : std::vector<std::vector<float>> {
+    Matrix2D(std::pair<int, int> shape);
+
+    std::pair<int, int> shape() const;
+    float sum() const;
+    Matrix2D operator==(const Matrix2D &other) const;
+    vector<float> unique() const;
 };
