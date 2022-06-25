@@ -16,6 +16,6 @@ void rng::seed(int seed) {
     gen64.seed(seed);
 }
 
-bool rng::probability(float p, int precision=100) {
+bool rng::probability(float p, int precision) {
     return gen32() % precision < p * precision;
 }
