@@ -5,17 +5,23 @@
 std::mt19937 gen32(69);
 std::mt19937_64 gen64(69);
 
-template <typename T>
-T rng::choice(std::vector<T> &choices) {
-    int i = gen32() % choices.size();
-    return choices[i];
-}
+namespace rng {
 
-void rng::seed(int seed) {
+template<typename T>
+T choice(std::vector<T> &choices) {
+    int ind = gen32() % choices.size();
+    return choices[ind];
+}
+template int choice<int>(std::vector<int> &choices);
+template float choice<float>(std::vector<float> &choices);
+
+void seed(int seed) {
     gen32.seed(seed);
     gen64.seed(seed);
 }
 
-bool rng::probability(float p, int precision) {
+bool probability(float p, int precision) {
     return gen32() % precision < p * precision;
 }
+
+} // namespace rng

@@ -1,15 +1,16 @@
 #include "decision_tree.hpp"
-#include "rng_util.hpp"
 
+#include <algorithm>
 #include <cassert>
 #include <deque>
 #include <vector>
-#include <algorithm>
+
+#include "rng_util.hpp"
 
 Node::Node() : split_val(0), feature(0), label(0), depth(0), is_none(true) {}
 Node::Node(float split_val, int feature, int label) : split_val(split_val), feature(feature), label(label), depth(0), is_none(false) {}
 
-std::ostream &operator<<(std::ostream &os, const Node& node) {
+std::ostream &operator<<(std::ostream &os, const Node &node) {
     if (node.is_leaf()) {
         os << "Label: " << label_names[node.label];
     } else {
@@ -37,7 +38,7 @@ DecisionTree DecisionTree::generate_random(int optimal_depth, float split_p) {
         int cur = q.front();
         q.pop_front();
 
-        for (int i=2; i--;) {
+        for (int i = 2; i--;) {
             if (ret.nodes[cur].depth + 2 <= optimal_depth && rng::probability(split_p)) {
                 int next_pos = ret.add_node(cur, 's');
                 q.push_back(next_pos);
