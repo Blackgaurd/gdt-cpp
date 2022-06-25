@@ -22,8 +22,8 @@ FitnessEvaluator::~FitnessEvaluator() {
 void FitnessEvaluator::_init() {
 }
 
-float FitnessEvaluator::accuracy(DecisionTree tree) {
+float FitnessEvaluator::accuracy(const DecisionTree &individual) {
 }
 
-float FitnessEvaluator::call(DecisionTree tree) {
+float FitnessEvaluator::operator()(const DecisionTree &individual) {
 }
